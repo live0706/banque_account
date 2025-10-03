@@ -5,9 +5,8 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from datetime import datetime
 
-# ===============================
-# Création des comptes Ross et Rachel (IDs fixes)
-# ===============================
+
+# Création des comptes Ross et Rachel 
 ross_account = account("Ross", 1350, account_number=9502018482)
 rachel_account = account("Rachel", 3450, account_number=1945729572)
 
@@ -20,9 +19,8 @@ accounts = {
     str(rachel_account.account_number): rachel_account
 }
 
-# ===============================
+
 # Fenêtre principale (Login)
-# ===============================
 root = tk.Tk()
 root.title("Banque - Login")
 root.geometry("400x250")
@@ -41,9 +39,8 @@ def login():
     else:
         messagebox.showerror("Erreur", "Nom ou ID incorrect")
 
-# ===============================
+
 # Dashboard
-# ===============================
 def open_dashboard(account: account):
     dashboard = tk.Toplevel(root)
     dashboard.title("Tableau de bord bancaire")
@@ -112,13 +109,12 @@ def open_dashboard(account: account):
 
     tk.Button(dashboard, text="📊 Plus d'infos", command=show_graph, bg="blue", fg="white").pack(pady=15)
 
-# ===============================
+
 # Interface Login
-# ===============================
 frame_login = tk.Frame(root, bg="white")
 frame_login.pack(expand=True)
 
-tk.Label(frame_login, text="🔐 Connexion", font=("Segoe UI", 16, "bold"), fg="black", bg="white").pack(pady=10)
+tk.Label(frame_login, text=" Connexion", font=("Segoe UI", 16, "bold"), fg="black", bg="white").pack(pady=10)
 
 tk.Label(frame_login, text="Nom :", fg="black", bg="white").pack()
 tk.Entry(frame_login, textvariable=username_var).pack()
